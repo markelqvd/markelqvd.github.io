@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 8%;
+
+    border-bottom: 1px solid #333;
+}
+
+
+header h1 {
+    font-size: 24px;
+}
+
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 8%;
+}
+
+
+.hero h2 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+
+.hero p {
+    max-width: 600px;
+
+    font-size: 20px;
+
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+
+.boton {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 12px 24px;
+
+    background: white;
+    color: black;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+}
+
+
+section {
+    padding: 100px 8%;
+}
+
+
+section > h2 {
+    font-size: 50px;
+
+    margin-bottom: 50px;
+}
+
+
+.proyectos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+
+.proyecto {
+    padding: 30px;
+
+    min-height: 300px;
+
+    border: 1px solid #333;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+.proyecto h3 {
+    font-size: 30px;
+}
+
+
+.proyecto p {
+    color: #aaa;
+}
+
+
+.proyecto a {
+    color: white;
+}
+
+
+#sobre-mi p {
+    max-width: 700px;
+
+    font-size: 20px;
+}
+
+
+#contacto a {
+    color: white;
+
+    font-size: 20px;
+}
+
+
+footer {
+    padding: 50px 8%;
+
+    border-top: 1px solid #333;
+
+    color: #777;
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .hero h2 {
+        font-size: 55px;
+    }
+
+
+    nav {
+        gap: 15px;
+    }
+
+}
