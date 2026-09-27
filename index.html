@@ -6,178 +6,395 @@
 		<meta content="width=device-width, initial-scale=1" name="viewport"/>
 		<title>Markel Quevedo — Game Design &amp; Development Student</title>
 		<meta content="Markel Quevedo — Game Design &amp; Development student focused on game design, Unity and Unreal Engine." name="description"/>
+
 		<link rel="icon" type="image/png" href="./assets/images/logotipo.png">
+
 			<style>
-			@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('./assets/fonts/jetbrains-mono-latin.woff2') format('woff2'); }
+				@font-face {
+				font-family: 'JetBrains Mono';
+				font-style: normal;
+				font-weight: 400 700;
+				font-display: swap;
+				src: url('./assets/fonts/jetbrains-mono-latin.woff2') format('woff2');
+				}
+			</style>
 
-			/*# sourceURL=animfolio-fonts-local-inline-css */
-		</style>
-		<link href="./assets/css/animfolio-base.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-animations.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-nav.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-contact.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-gallery.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-qr.css" rel="stylesheet"/>
-		<link href="./assets/css/animfolio-print.css" media="print" rel="stylesheet"/>
-		<link href="./assets/css/format.css" rel="stylesheet"/>
-		<style id="animfolio-theme-vars">
-			.animfolio-container {
-			--animfolio-accent: #D97706 !important;
-			--animfolio-accent-hover: #cf6d00 !important;
-			--animfolio-accent-light: rgba(217, 119, 6, 0.1) !important;
-			--animfolio-accent-subtle: rgba(217, 119, 6, 0.12) !important;
-			--animfolio-accent-shadow: rgba(217, 119, 6, 0.3) !important;
-			--animfolio-accent-glow: rgba(217, 119, 6, 0.5) !important;
-			--animfolio-secondary: #DB2777 !important;
-			--animfolio-secondary-hover: #d11d6d !important;
-			--animfolio-secondary-light: rgba(219, 39, 119, 0.1) !important;
-			--animfolio-on-accent: #14110f !important;
-			--animfolio-on-secondary: #ffffff !important;
-			--animfolio-bg: #1A1A2E;
-			--animfolio-bg-secondary: #FFF7E0;
-			--animfolio-bg-tertiary: #1e1e1e;
-			--animfolio-text: #F5F5F5;
-			--animfolio-text-secondary: #a0a0a0;
-			--animfolio-text-muted: #8a8a8a;
-			--animfolio-border: rgba(255, 255, 255, 0.1);
-			--animfolio-border-strong: rgba(255, 255, 255, 0.2);
-			--animfolio-surface: #1a1a1a;
-			--animfolio-surface-hover: #222222;
-			--animfolio-overlay: rgba(0, 0, 0, 0.75);
-			--animfolio-success: #22c55e;
-			--animfolio-warning: #f59e0b;
-			--animfolio-error: #ef4444;
-			--animfolio-info: #3b82f6;
-			--animfolio-font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-			--animfolio-font-body: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-			--animfolio-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-			--animfolio-font-size-base: 16px;
-			--animfolio-font-size-h1: clamp(2.5rem, 5vw, 4rem);
-			--animfolio-font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
-			--animfolio-font-size-h3: 1.5rem;
-			--animfolio-font-size-h4: 1.25rem;
-			--animfolio-font-weight-bold: 700;
-			--animfolio-font-weight-medium: 500;
-			--animfolio-line-height: 1.6;
-			--animfolio-letter-spacing: 0em;
-			--animfolio-container-width: 1200px;
-			--animfolio-section-spacing: 100px;
-			--animfolio-radius: 12px;
-			--animfolio-radius-sm: 6px;
-			--animfolio-radius-lg: 16px;
-			--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-			--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-			--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
-			--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
-			--animfolio-duration: 0.6s;
-			--animfolio-delay: 0s;
-			--animfolio-easing: cubic-bezier(0.4, 0, 0.2, 1);
-			--animfolio-easing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-			--animfolio-stagger: 0.1s;
-			--animfolio-transition-fast: 150ms ease;
-			--animfolio-transition-normal: 300ms ease;
-			--animfolio-transition-slow: 500ms ease;
-			--animfolio-z-base: 1;
-			--animfolio-z-dropdown: 100;
-			--animfolio-z-sticky: 200;
-			--animfolio-z-nav: 300;
-			--animfolio-z-modal: 400;
-			--animfolio-z-lightbox: 500;
-			--animfolio-z-tooltip: 600;
-			--animfolio-z-cursor: 700;
-			}
-			.animfolio-container--light, .animfolio-container[data-animfolio-scheme="dark"] {
-			--animfolio-bg: #FFFBF0;
-			--animfolio-bg-secondary: #f5f5f5;
-			--animfolio-bg-tertiary: #ebebeb;
-			--animfolio-text: #1A1A2E;
-			--animfolio-text-secondary: #555555;
-			--animfolio-text-muted: #767676;
-			--animfolio-border: rgba(0, 0, 0, 0.1);
-			--animfolio-border-strong: rgba(0, 0, 0, 0.2);
-			--animfolio-surface: #ffffff;
-			--animfolio-surface-hover: #f9f9f9;
-			--animfolio-overlay: rgba(0, 0, 0, 0.5);
-			--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-			--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-			--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
-			--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
-			--animfolio-accent-light: rgba(217, 119, 6, 0.08) !important;
-			--animfolio-accent-subtle: rgba(217, 119, 6, 0.05) !important;
-			--animfolio-accent-shadow: rgba(217, 119, 6, 0.2) !important;
-			--animfolio-accent-glow: rgba(217, 119, 6, 0.15) !important;
-			--animfolio-on-accent: #14110f !important;
-			--animfolio-on-secondary: #ffffff !important;
-			}
-			@media (prefers-color-scheme: light) {
-			.animfolio-container--auto {
-			--animfolio-bg: #FFFBF0;
-			--animfolio-bg-secondary: #f5f5f5;
-			--animfolio-bg-tertiary: #ebebeb;
-			--animfolio-text: #1A1A2E;
-			--animfolio-text-secondary: #555555;
-			--animfolio-text-muted: #767676;
-			--animfolio-border: rgba(0, 0, 0, 0.1);
-			--animfolio-border-strong: rgba(0, 0, 0, 0.2);
-			--animfolio-surface: #ffffff;
-			--animfolio-surface-hover: #f9f9f9;
-			--animfolio-overlay: rgba(0, 0, 0, 0.5);
-			--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-			--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-			--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
-			--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
-			--animfolio-accent-light: rgba(217, 119, 6, 0.08) !important;
-			--animfolio-accent-subtle: rgba(217, 119, 6, 0.05) !important;
-			--animfolio-accent-shadow: rgba(217, 119, 6, 0.2) !important;
-			--animfolio-accent-glow: rgba(217, 119, 6, 0.15) !important;
-			--animfolio-on-accent: #14110f !important;
-			--animfolio-on-secondary: #ffffff !important;
-			}
-			}
+			<link href="./assets/css/animfolio-base.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-animations.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-nav.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-contact.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-gallery.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-qr.css" rel="stylesheet"/>
+			<link href="./assets/css/animfolio-print.css" media="print" rel="stylesheet"/>
+			<link href="./assets/css/format.css" rel="stylesheet"/>
 
-			.animfolio-container *,.animfolio-container *::before,.animfolio-container *::after{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{margin:0;padding:0;background:#FFFBF0;color:#1A1A2E;font-family:var(--animfolio-font-body,'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif);font-size:var(--animfolio-font-size-base,16px);line-height:var(--animfolio-line-height,1.6);overflow-x:hidden}body.admin-bar{padding-top:32px}body.admin-bar .animfolio-nav--sticky{top:32px}@media screen and (max-width:782px){body.admin-bar{padding-top:46px}body.admin-bar .animfolio-nav--sticky{top:46px}}.wp-site-blocks,.entry-content,.page-content,.post-content{all:unset;display:block}
-			/*# sourceURL=animfolio-base-inline-css */
-		</style>
-		<script>
-			document.documentElement.className+=" animfolio-js";(function(){function r(){if(window.animfolio&&window.animfolio._initialized){return;}var e=document.querySelectorAll("[data-animfolio-animate]:not(.animfolio-visible),.animfolio-stagger__item:not(.animfolio-visible)");for(var i=0;i<e.length;i++){e[i=""].classList.add=""("animfolio-visible");}}if=""(document.readyState=""=="complete"){setTimeout=""(r="",1500="");}else{window.addEventListener=""("load",function=""(){setTimeout=""(r="",1500="");});}setTimeout=""(r="",4000="");})();
-//# sourceURL=animfolio-failsafe-js-after
-		</script>
-		<style>
-			.markel-copyright{text-align:center;padding:28px 20px 36px;color:var(--animfolio-text-muted);font-size:.9rem;border-top:1px solid var(--animfolio-border);}
-			#about .animfolio-button{display:inline-flex;margin-top:2rem;}
-		</style>
-		<style>
-			.animfolio-grid--projects-four{grid-template-columns:repeat(4,minmax(0,1fr));}
-			@media (max-width:1100px){.animfolio-grid--projects-four{grid-template-columns:repeat(2,minmax(0,1fr));}}
-			@media (max-width:700px){.animfolio-grid--projects-four{grid-template-columns:1fr;}}
-		</style>
-	</head>
+			<style id="animfolio-theme-vars">
+
+				/* =========================================================
+				DARK MODE — DEFAULT
+				========================================================= */
+
+				.animfolio-container {
+				--animfolio-accent: #D97706 !important;
+				--animfolio-accent-hover: #cf6d00 !important;
+				--animfolio-accent-light: rgba(217, 119, 6, 0.1) !important;
+				--animfolio-accent-subtle: rgba(217, 119, 6, 0.12) !important;
+				--animfolio-accent-shadow: rgba(217, 119, 6, 0.3) !important;
+				--animfolio-accent-glow: rgba(217, 119, 6, 0.5) !important;
+
+				--animfolio-secondary: #DB2777 !important;
+				--animfolio-secondary-hover: #d11d6d !important;
+				--animfolio-secondary-light: rgba(219, 39, 119, 0.1) !important;
+
+				--animfolio-on-accent: #14110f !important;
+				--animfolio-on-secondary: #ffffff !important;
+
+				/* DARK COLORS */
+				--animfolio-bg: #1A1A2E;
+				--animfolio-bg-secondary: #161625;
+				--animfolio-bg-tertiary: #1e1e1e;
+
+				--animfolio-text: #F5F5F5;
+				--animfolio-text-secondary: #a0a0a0;
+				--animfolio-text-muted: #8a8a8a;
+
+				--animfolio-border: rgba(255, 255, 255, 0.1);
+				--animfolio-border-strong: rgba(255, 255, 255, 0.2);
+
+				--animfolio-surface: #1a1a1a;
+				--animfolio-surface-hover: #222222;
+
+				--animfolio-overlay: rgba(0, 0, 0, 0.75);
+
+				--animfolio-success: #22c55e;
+				--animfolio-warning: #f59e0b;
+				--animfolio-error: #ef4444;
+				--animfolio-info: #3b82f6;
+
+				--animfolio-font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+				--animfolio-font-body: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+				--animfolio-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+				--animfolio-font-size-base: 16px;
+				--animfolio-font-size-h1: clamp(2.5rem, 5vw, 4rem);
+				--animfolio-font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
+				--animfolio-font-size-h3: 1.5rem;
+				--animfolio-font-size-h4: 1.25rem;
+
+				--animfolio-font-weight-bold: 700;
+				--animfolio-font-weight-medium: 500;
+
+				--animfolio-line-height: 1.6;
+				--animfolio-letter-spacing: 0em;
+
+				--animfolio-container-width: 1200px;
+				--animfolio-section-spacing: 100px;
+
+				--animfolio-radius: 12px;
+				--animfolio-radius-sm: 6px;
+				--animfolio-radius-lg: 16px;
+
+				--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+				--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+				--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+				--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+				--animfolio-duration: 0.6s;
+				--animfolio-delay: 0s;
+				--animfolio-easing: cubic-bezier(0.4, 0, 0.2, 1);
+				--animfolio-easing-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+				--animfolio-stagger: 0.1s;
+
+				--animfolio-transition-fast: 150ms ease;
+				--animfolio-transition-normal: 300ms ease;
+				--animfolio-transition-slow: 500ms ease;
+
+				--animfolio-z-base: 1;
+				--animfolio-z-dropdown: 100;
+				--animfolio-z-sticky: 200;
+				--animfolio-z-nav: 300;
+				--animfolio-z-modal: 400;
+				--animfolio-z-lightbox: 500;
+				--animfolio-z-tooltip: 600;
+				--animfolio-z-cursor: 700;
+				}
+
+
+				/* =========================================================
+				LIGHT MODE
+				========================================================= */
+
+				.animfolio-container--light,
+				.animfolio-container[data-animfolio-scheme="light"] {
+
+				--animfolio-bg: #FFFBF0;
+				--animfolio-bg-secondary: #f5f5f5;
+				--animfolio-bg-tertiary: #ebebeb;
+
+				--animfolio-text: #1A1A2E;
+				--animfolio-text-secondary: #555555;
+				--animfolio-text-muted: #767676;
+
+				--animfolio-border: rgba(0, 0, 0, 0.1);
+				--animfolio-border-strong: rgba(0, 0, 0, 0.2);
+
+				--animfolio-surface: #ffffff;
+				--animfolio-surface-hover: #f9f9f9;
+
+				--animfolio-overlay: rgba(0, 0, 0, 0.5);
+
+				--animfolio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+				--animfolio-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+				--animfolio-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+				--animfolio-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+				--animfolio-accent-light: rgba(217, 119, 6, 0.08) !important;
+				--animfolio-accent-subtle: rgba(217, 119, 6, 0.05) !important;
+				--animfolio-accent-shadow: rgba(217, 119, 6, 0.2) !important;
+				--animfolio-accent-glow: rgba(217, 119, 6, 0.15) !important;
+
+				--animfolio-on-accent: #14110f !important;
+				--animfolio-on-secondary: #ffffff !important;
+				}
+
+
+				/* =========================================================
+				BASE
+				========================================================= */
+
+				.animfolio-container *,
+				.animfolio-container *::before,
+				.animfolio-container *::after {
+				box-sizing: border-box;
+				}
+
+				html {
+				scroll-behavior: smooth;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				}
+
+				/* DARK BODY BY DEFAULT */
+
+				body {
+				margin: 0;
+				padding: 0;
+				background: #1A1A2E;
+				color: #F5F5F5;
+				font-family: var(--animfolio-font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+				font-size: var(--animfolio-font-size-base, 16px);
+				line-height: var(--animfolio-line-height, 1.6);
+				overflow-x: hidden;
+				}
+
+				body.admin-bar {
+				padding-top: 32px;
+				}
+
+				body.admin-bar .animfolio-nav--sticky {
+				top: 32px;
+				}
+
+				@media screen and (max-width: 782px) {
+
+				body.admin-bar {
+				padding-top: 46px;
+				}
+
+				body.admin-bar .animfolio-nav--sticky {
+				top: 46px;
+				}
+				}
+
+				.wp-site-blocks,
+				.entry-content,
+				.page-content,
+				.post-content {
+				all: unset;
+				display: block;
+				}
+
+
+				/* =========================================================
+				REMOVE HERO BACKGROUND IMAGE
+				========================================================= */
+
+				.animfolio-section--hero,
+				.animfolio-hero {
+				background-image: none !important;
+				}
+
+				.animfolio-section--hero::before,
+				.animfolio-section--hero::after,
+				.animfolio-hero::before,
+				.animfolio-hero::after {
+				background-image: none !important;
+				}
+
+
+				/* =========================================================
+				CUSTOM FOOTER
+				========================================================= */
+
+				.markel-copyright {
+				text-align: center;
+				padding: 28px 20px 36px;
+				color: var(--animfolio-text-muted);
+				font-size: .9rem;
+				border-top: 1px solid var(--animfolio-border);
+				}
+
+				#about .animfolio-button {
+				display: inline-flex;
+				margin-top: 2rem;
+				}
+
+
+				/* =========================================================
+				FOUR PROJECTS IN ONE ROW
+				========================================================= */
+
+				.animfolio-grid--projects-four {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				}
+
+				@media (max-width: 1100px) {
+
+				.animfolio-grid--projects-four {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+				}
+
+				@media (max-width: 700px) {
+
+				.animfolio-grid--projects-four {
+				grid-template-columns: 1fr;
+				}
+				}
+
+			</style>
+
+
+			<script>
+				document.documentElement.className += " animfolio-js";
+
+				(function(){
+
+				function r(){
+
+				if(window.animfolio && window.animfolio._initialized){
+				return;
+				}
+
+				var e = document.querySelectorAll(
+				"[data-animfolio-animate]:not(.animfolio-visible),.animfolio-stagger__item:not(.animfolio-visible)"
+				);
+
+				for(var i = 0; i < e.length; i++){
+						e[i].classList.add("animfolio-visible");
+					}
+				}
+
+				if(document.readyState == "complete"){
+					setTimeout(r, 1500);
+				}else{
+					window.addEventListener("load", function(){
+						setTimeout(r, 1500);
+					});
+				}
+
+				setTimeout(r, 4000);
+
+			})();
+			</script>
+
+		</head>
+
+
 	<body>
-		<!-- -->
 
-		<div class="animfolio-container animfolio-container--dark animfolio-container--format-11 animfolio-container--one-page" data-animfolio-format="format-11-student" data-animfolio-intensity="medium" data-animfolio-scheme="dark">
-			<a class="animfolio-skip-link" href="#hero">Skip to main content</a>
-			<nav aria-label="Portfolio navigation" class="animfolio-nav animfolio-nav--horizontal animfolio-nav--sticky" role="navigation">
-				<a class="animfolio-nav__logo" href="#hero">Markel Quevedo</a>
-				<button aria-controls="animfolio-nav-menu" aria-expanded="false" aria-label="Toggle navigation" class="animfolio-nav__toggle">
+		<div
+			class="animfolio-container animfolio-container--dark animfolio-container--format-11 animfolio-container--one-page"
+			data-animfolio-format="format-11-student"
+			data-animfolio-intensity="medium"
+			data-animfolio-scheme="dark"
+		>
+
+			<a class="animfolio-skip-link" href="#hero">
+				Skip to main content
+			</a>
+
+
+			<!-- =====================================================
+			     NAVIGATION
+			     ===================================================== -->
+
+			<nav
+				aria-label="Portfolio navigation"
+				class="animfolio-nav animfolio-nav--horizontal animfolio-nav--sticky"
+				role="navigation"
+			>
+
+				<a class="animfolio-nav__logo" href="#hero">
+					Markel Quevedo
+				</a>
+
+
+				<button
+					aria-controls="animfolio-nav-menu"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+					class="animfolio-nav__toggle"
+				>
 					<span aria-hidden="true" class="animfolio-nav__toggle-bar"></span>
 					<span aria-hidden="true" class="animfolio-nav__toggle-bar"></span>
 					<span aria-hidden="true" class="animfolio-nav__toggle-bar"></span>
 				</button>
+
+
 				<ul class="animfolio-nav__list" id="animfolio-nav-menu">
+
 					<li class="animfolio-nav__item">
-						<a class="animfolio-nav__link" data-animfolio-section="hero" href="#hero">Home</a>
+						<a class="animfolio-nav__link" data-animfolio-section="hero" href="#hero">
+							Home
+						</a>
 					</li>
+
 					<li class="animfolio-nav__item">
-						<a class="animfolio-nav__link" data-animfolio-section="about" href="#about">About</a>
+						<a class="animfolio-nav__link" data-animfolio-section="about" href="#about">
+							About
+						</a>
 					</li>
+
 					<li class="animfolio-nav__item">
-						<a class="animfolio-nav__link" data-animfolio-section="projects" href="#projects">Projects</a>
+						<a class="animfolio-nav__link" data-animfolio-section="projects" href="#projects">
+							Projects
+						</a>
 					</li>
+
 				</ul>
-				<button aria-label="Toggle dark mode" class="animfolio-theme-toggle">
-					<span aria-hidden="true" class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--sun">
-						<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+
+
+				<button
+					aria-label="Toggle dark mode"
+					class="animfolio-theme-toggle"
+				>
+
+					<span
+						aria-hidden="true"
+						class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--sun"
+					>
+						<svg
+							fill="none"
+							height="20"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewbox="0 0 24 24"
+							width="20"
+						>
 							<circle cx="12" cy="12" r="5"></circle>
 							<line x1="12" x2="12" y1="1" y2="3"></line>
 							<line x1="12" x2="12" y1="21" y2="23"></line>
@@ -189,178 +406,694 @@
 							<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
 						</svg>
 					</span>
-					<span aria-hidden="true" class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--moon">
-						<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20">
+
+
+					<span
+						aria-hidden="true"
+						class="animfolio-theme-toggle__icon animfolio-theme-toggle__icon--moon"
+					>
+						<svg
+							fill="none"
+							height="20"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewbox="0 0 24 24"
+							width="20"
+						>
 							<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
 						</svg>
 					</span>
+
 				</button>
+
 			</nav>
-			<section class="animfolio-section animfolio-section--hero animfolio-section--align-center" data-animfolio-section="hero" id="hero">
+
+
+			<!-- =====================================================
+			     HERO
+			     ===================================================== -->
+
+			<section
+				class="animfolio-section animfolio-section--hero animfolio-section--align-center"
+				data-animfolio-section="hero"
+				id="hero"
+			>
+
 				<div class="animfolio-inner">
+
 					<div class="animfolio-hero">
+
 						<div class="animfolio-hero__content">
-							<h1 class="animfolio-hero__name" data-animfolio-animate="fade-up">Markel Quevedo</h1>
-							<h2 class="animfolio-hero__title" data-animfolio-animate="fade-up" data-animfolio-delay="0.1">Game Design &amp; Development Student</h2>
-							<div class="animfolio-hero__subtitle animfolio-hero__typed" data-animfolio-animate="fade-up" data-animfolio-delay="0.2" data-animfolio-typed='["Focused on game design, Unity and Unreal Engine.", "Designing games and building playable experiences.", "Learning, prototyping, and creating."]'>Focused on game design, Unity and Unreal Engine.</div>
-							<div class="animfolio-hero__cta" data-animfolio-animate="fade-up" data-animfolio-delay="0.3">
-								<a class="animfolio-button animfolio-button--primary animfolio-hero__cta-primary" href="#projects">View My Projects</a>
+
+							<h1
+								class="animfolio-hero__name"
+								data-animfolio-animate="fade-up"
+							>
+								Markel Quevedo
+							</h1>
+
+
+							<h2
+								class="animfolio-hero__title"
+								data-animfolio-animate="fade-up"
+								data-animfolio-delay="0.1"
+							>
+								Game Design &amp; Development Student
+							</h2>
+
+
+							<div
+								class="animfolio-hero__subtitle animfolio-hero__typed"
+								data-animfolio-animate="fade-up"
+								data-animfolio-delay="0.2"
+								data-animfolio-typed='[
+									"Focused on game design, Unity and Unreal Engine.",
+									"Designing games and building playable experiences.",
+									"Learning, prototyping, and creating."
+								]'
+							>
+								Focused on game design, Unity and Unreal Engine.
+							</div>
+
+
+							<div
+								class="animfolio-hero__cta"
+								data-animfolio-animate="fade-up"
+								data-animfolio-delay="0.3"
+							>
+
+								<a
+									class="animfolio-button animfolio-button--primary animfolio-hero__cta-primary"
+									href="#projects"
+								>
+									View My Projects
+								</a>
 
 							</div>
-							<div class="animfolio-hero__social animfolio-social-icons animfolio-social-icons--outline" data-animfolio-animate="fade-up" data-animfolio-delay="0.4">
-								<a aria-label="Github" href="https://github.com/markelqvd" rel="noopener noreferrer" target="_blank">
-									<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+
+							<div
+								class="animfolio-hero__social animfolio-social-icons animfolio-social-icons--outline"
+								data-animfolio-animate="fade-up"
+								data-animfolio-delay="0.4"
+							>
+
+								<a
+									aria-label="Github"
+									href="https://github.com/markelqvd"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+
+									<svg
+										aria-hidden="true"
+										fill="none"
+										height="24"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewbox="0 0 24 24"
+										width="24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
 										<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 									</svg>
-									<span class="animfolio-social__label">Github</span>
+
+									<span class="animfolio-social__label">
+										Github
+									</span>
+
 								</a>
-								<a aria-label="Linkedin" href="https://www.linkedin.com/in/markel-quevedo" rel="noopener noreferrer" target="_blank">
-									<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+
+								<a
+									aria-label="Linkedin"
+									href="https://www.linkedin.com/in/markel-quevedo"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+
+									<svg
+										aria-hidden="true"
+										fill="none"
+										height="24"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewbox="0 0 24 24"
+										width="24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
 										<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
 										<rect height="12" width="4" x="2" y="9"></rect>
 										<circle cx="4" cy="4" r="2"></circle>
 									</svg>
-									<span class="animfolio-social__label">Linkedin</span>
+
+									<span class="animfolio-social__label">
+										Linkedin
+									</span>
+
 								</a>
-								<a aria-label="Email" href="mailto:quevedo.markel@gmail.com" rel="noopener noreferrer" target="_blank">
-									<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+
+								<a
+									aria-label="Email"
+									href="mailto:quevedo.markel@gmail.com"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+
+									<svg
+										aria-hidden="true"
+										fill="none"
+										height="24"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewbox="0 0 24 24"
+										width="24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
 										<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
 										<polyline points="22,6 12,13 2,6"></polyline>
 									</svg>
-									<span class="animfolio-social__label">Email</span>
+
+									<span class="animfolio-social__label">
+										Email
+									</span>
+
 								</a>
+
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
-				<!-- .animfolio-inner -->
+
 			</section>
-			<section class="animfolio-section animfolio-section--about animfolio-section--align-center" data-animfolio-section="about" id="about">
+
+
+			<!-- =====================================================
+			     ABOUT
+			     ===================================================== -->
+
+			<section
+				class="animfolio-section animfolio-section--about animfolio-section--align-center"
+				data-animfolio-section="about"
+				id="about"
+			>
+
 				<div class="animfolio-inner">
+
 					<div class="animfolio-section__header">
-						<h2 class="animfolio-section__title">About Me</h2>
+
+						<h2 class="animfolio-section__title">
+							About Me
+						</h2>
+
 					</div>
-					<div class="animfolio-about" data-animfolio-animate="fade-up">
-						<div class="animfolio-about__bio">I'm a Game Design &amp; Development student at EUNEIZ with a particular interest in level &amp; dungeon design. I combine design and programming to prototype, working mainly with Unity and Unreal Engine. I'm also currently learning Godot and expanding my technical skills.</div>
-						<div class="animfolio-about__fun-facts animfolio-stagger" data-animfolio-stagger="0.1">
-							<div class="animfolio-about__fun-fact animfolio-stagger__item">Game Design &amp; Development student at EUNEIZ</div>
-							<div class="animfolio-about__fun-fact animfolio-stagger__item">Unity and Unreal Engine</div>
-							<div class="animfolio-about__fun-fact animfolio-stagger__item">Interested in gameplay and level design</div>
-							<div class="animfolio-about__fun-fact animfolio-stagger__item">Currently building a game development portfolio</div>
+
+
+					<div
+						class="animfolio-about"
+						data-animfolio-animate="fade-up"
+					>
+
+						<div class="animfolio-about__bio">
+
+							I'm a Game Design &amp; Development student at EUNEIZ with a particular interest in level &amp; dungeon design. I combine design and programming to prototype, working mainly with Unity and Unreal Engine. I'm also currently learning Godot and expanding my technical skills.
+
 						</div>
-						<a class="animfolio-button animfolio-button--primary" download="" href="./assets/cv/Markel_Quevedo_CV.pdf">Download CV</a>
+
+
+						<div
+							class="animfolio-about__fun-facts animfolio-stagger"
+							data-animfolio-stagger="0.1"
+						>
+
+							<div class="animfolio-about__fun-fact animfolio-stagger__item">
+								Game Design &amp; Development student at EUNEIZ
+							</div>
+
+							<div class="animfolio-about__fun-fact animfolio-stagger__item">
+								Unity and Unreal Engine
+							</div>
+
+							<div class="animfolio-about__fun-fact animfolio-stagger__item">
+								Interested in gameplay and level design
+							</div>
+
+							<div class="animfolio-about__fun-fact animfolio-stagger__item">
+								Currently building a game development portfolio
+							</div>
+
+						</div>
+
+
+						<a
+							class="animfolio-button animfolio-button--primary"
+							download=""
+							href="./assets/cv/Markel_Quevedo_CV.pdf"
+						>
+							Download CV
+						</a>
+
 					</div>
+
 				</div>
-				<!-- .animfolio-inner -->
+
 			</section>
-			<section class="animfolio-section animfolio-section--education animfolio-section--align-center" data-animfolio-section="education" id="education">
+
+
+			<!-- =====================================================
+			     EDUCATION
+			     ===================================================== -->
+
+			<section
+				class="animfolio-section animfolio-section--education animfolio-section--align-center"
+				data-animfolio-section="education"
+				id="education"
+			>
+
 				<div class="animfolio-inner">
+
 					<div class="animfolio-section__header">
-						<h2 class="animfolio-section__title">Education</h2>
+
+						<h2 class="animfolio-section__title">
+							Education
+						</h2>
+
 					</div>
-					<div class="animfolio-timeline animfolio-stagger" data-animfolio-animate="fade-up" data-animfolio-stagger="0.1">
+
+
+					<div
+						class="animfolio-timeline animfolio-stagger"
+						data-animfolio-animate="fade-up"
+						data-animfolio-stagger="0.1"
+					>
+
 						<div class="animfolio-timeline__line"></div>
-						<div class="animfolio-timeline__item animfolio-stagger__item" data-animfolio-animate="fade-up" data-animfolio-delay="0.0">
+
+
+						<div
+							class="animfolio-timeline__item animfolio-stagger__item"
+							data-animfolio-animate="fade-up"
+							data-animfolio-delay="0.0"
+						>
+
 							<div class="animfolio-timeline__dot"></div>
+
+
 							<div class="animfolio-timeline__content animfolio-card animfolio-card--bordered">
-								<div class="animfolio-timeline__role">Degree in Game Design &amp; Development</div>
-								<div class="animfolio-timeline__company">EUNEIZ</div>
-								<div class="animfolio-timeline__date">Current</div>
-								<div class="animfolio-timeline__description">Game development studies focused on game design, development, interactive systems, and the creation of playable projects.</div>
+
+								<div class="animfolio-timeline__role">
+									Degree in Game Design &amp; Development
+								</div>
+
+								<div class="animfolio-timeline__company">
+									EUNEIZ
+								</div>
+
+								<div class="animfolio-timeline__date">
+									Current
+								</div>
+
+								<div class="animfolio-timeline__description">
+									Game development studies focused on game design, development, interactive systems, and the creation of playable projects.
+								</div>
+
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
-				<!-- .animfolio-inner -->
-				<!-- .animfolio-inner -->
+
 			</section>
-			<section class="animfolio-section animfolio-section--projects animfolio-section--align-center" data-animfolio-section="projects" id="projects">
+
+
+			<!-- =====================================================
+			     PROJECTS
+			     ===================================================== -->
+
+			<section
+				class="animfolio-section animfolio-section--projects animfolio-section--align-center"
+				data-animfolio-section="projects"
+				id="projects"
+			>
+
 				<div class="animfolio-inner">
+
 					<div class="animfolio-section__header">
-						<h2 class="animfolio-section__title">Projects</h2>
+
+						<h2 class="animfolio-section__title">
+							Projects
+						</h2>
+
 					</div>
-					<div class="animfolio-grid animfolio-stagger animfolio-grid--projects-four" data-animfolio-stagger="0.15">
+
+
+					<div
+						class="animfolio-grid animfolio-stagger animfolio-grid--projects-four"
+						data-animfolio-stagger="0.15"
+					>
+
+
+						<!-- PROJECT 1 -->
+
 						<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-stagger__item">
-							<img alt="Game Project" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-1.jpg" width="600"/>
-							<h3 class="animfolio-project__title animfolio-card__title">Get Rid Of Those Corners</h3>
+
+							<img
+								alt="Game Project"
+								class="animfolio-project__image"
+								decoding="async"
+								height="400"
+								loading="lazy"
+								src="./assets/images/project-1.jpg"
+								width="600"
+							/>
+
+							<h3 class="animfolio-project__title animfolio-card__title">
+								Get Rid Of Those Corners
+							</h3>
+
 							<p class="animfolio-project__description">
-								A physics-based incremental game where you destroy geometric shapes, trigger chain reactions and unlock upgrades to clear the world of corners.</p>
+								A physics-based incremental game where you destroy geometric shapes, trigger chain reactions and unlock upgrades to clear the world of corners.
+							</p>
+
 							<div class="animfolio-project__stack animfolio-card__tags">
-								<span class="animfolio-card__tag">Game Desing</span>
-								<span class="animfolio-card__tag">Art</span>
+
+								<span class="animfolio-card__tag">
+									Game Design
+								</span>
+
+								<span class="animfolio-card__tag">
+									Art
+								</span>
+
 							</div>
+
 							<div class="animfolio-project__links animfolio-card__footer">
-								<a class="animfolio-button animfolio-button--primary" href="https://store.steampowered.com/app/4550150/Get_Rid_Of_Those_Corners/" rel="https://store.steampowered.com/app/4550150/Get_Rid_Of_Those_Corners/" target="_blank">View Project</a>
+
+								<a
+									class="animfolio-button animfolio-button--primary"
+									href="https://store.steampowered.com/app/4550150/Get_Rid_Of_Those_Corners/"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									View Project
+								</a>
+
 							</div>
+
 						</div>
+
+
+						<!-- PROJECT 2 -->
+
 						<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-stagger__item">
-							<img alt="Game Project" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/project-2.jpg" width="600"/>
-							<h3 class="animfolio-project__title animfolio-card__title">IntoTheWell</h3>
-							<p class="animfolio-project__description">An infinite dropper where you fall down a mysterious well, switching sides with each tap to dodge obstacles and collect coins as you descend. Designed as a simple and fast-paced mobile experience.</p>
+
+							<img
+								alt="Game Project"
+								class="animfolio-project__image"
+								decoding="async"
+								height="400"
+								loading="lazy"
+								src="./assets/images/project-2.jpg"
+								width="600"
+							/>
+
+							<h3 class="animfolio-project__title animfolio-card__title">
+								IntoTheWell
+							</h3>
+
+							<p class="animfolio-project__description">
+								An infinite dropper where you fall down a mysterious well, switching sides with each tap to dodge obstacles and collect coins as you descend. Designed as a simple and fast-paced mobile experience.
+							</p>
+
 							<div class="animfolio-project__stack animfolio-card__tags">
-								<span class="animfolio-card__tag">Game Design</span>
-								<span class="animfolio-card__tag">Programming</span>
-								<span class="animfolio-card__tag">Art</span>
-								<span class="animfolio-card__tag">Unity</span>
+
+								<span class="animfolio-card__tag">
+									Game Design
+								</span>
+
+								<span class="animfolio-card__tag">
+									Programming
+								</span>
+
+								<span class="animfolio-card__tag">
+									Art
+								</span>
+
+								<span class="animfolio-card__tag">
+									Unity
+								</span>
+
 							</div>
+
 							<div class="animfolio-project__links animfolio-card__footer">
-								<a class="animfolio-button animfolio-button--primary" href="https://github.com/markelqvd/AppMovil" rel="https://github.com/markelqvd/AppMovil" target="_blank">View Project</a>
+
+								<a
+									class="animfolio-button animfolio-button--primary"
+									href="https://github.com/markelqvd/AppMovil"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									View Project
+								</a>
+
 							</div>
+
 						</div>
+
+
+						<!-- PROJECT 3 -->
+
 						<div class="animfolio-project animfolio-card animfolio-card--bordered animfolio-stagger__item">
-							<img alt="Game Project" class="animfolio-project__image" decoding="async" height="400" loading="lazy" src="./assets/images/itsasargia.jpg" width="600"/>
-							<h3 class="animfolio-project__title animfolio-card__title">Itsasargia</h3>
-							<p class="animfolio-project__description">A small platforming game where you play as a fox exploring different areas, each featuring its own mechanics and challenges, with the goal of reaching a distant lighthouse.</p>
+
+							<img
+								alt="Game Project"
+								class="animfolio-project__image"
+								decoding="async"
+								height="400"
+								loading="lazy"
+								src="./assets/images/itsasargia.jpg"
+								width="600"
+							/>
+
+							<h3 class="animfolio-project__title animfolio-card__title">
+								Itsasargia
+							</h3>
+
+							<p class="animfolio-project__description">
+								A small platforming game where you play as a fox exploring different areas, each featuring its own mechanics and challenges, with the goal of reaching a distant lighthouse.
+							</p>
+
 							<div class="animfolio-project__stack animfolio-card__tags">
-								<span class="animfolio-card__tag">Game Design</span>
-								<span class="animfolio-card__tag">Programming</span>
-								<span class="animfolio-card__tag">Unity</span>
+
+								<span class="animfolio-card__tag">
+									Game Design
+								</span>
+
+								<span class="animfolio-card__tag">
+									Programming
+								</span>
+
+								<span class="animfolio-card__tag">
+									Unity
+								</span>
+
 							</div>
+
 							<div class="animfolio-project__links animfolio-card__footer">
-								<a class="animfolio-button animfolio-button--primary" href="https://github.com/markelqvd/JuegoZorro" rel="https://github.com/markelqvd/JuegoZorro" target="_blank">View Project</a>
+
+								<a
+									class="animfolio-button animfolio-button--primary"
+									href="https://github.com/markelqvd/JuegoZorro"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									View Project
+								</a>
+
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
-				<!-- .animfolio-inner -->
+
 			</section>
-			<button aria-label="Back to top" class="animfolio-back-to-top">
-				<svg fill="none" height="20" viewbox="0 0 20 20" width="20">
-					<path d="M10 15V5M10 5L5 10M10 5L15 10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+
+
+			<!-- BACK TO TOP -->
+
+			<button
+				aria-label="Back to top"
+				class="animfolio-back-to-top"
+			>
+
+				<svg
+					fill="none"
+					height="20"
+					viewbox="0 0 20 20"
+					width="20"
+				>
+					<path
+						d="M10 15V5M10 5L5 10M10 5L15 10"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+					></path>
 				</svg>
+
 			</button>
+
+
+			<!-- PROGRESS BAR -->
+
 			<div class="animfolio-progress">
 				<div class="animfolio-progress__bar"></div>
 			</div>
+
+
+			<!-- FOOTER SOCIAL -->
+
 			<div class="animfolio-footer-social animfolio-social-icons animfolio-social-icons--outline">
-				<a aria-label="Github" href="https://github.com/markelqvd" rel="noopener noreferrer" target="_blank">
-					<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+				<a
+					aria-label="Github"
+					href="https://github.com/markelqvd"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+
+					<svg
+						aria-hidden="true"
+						fill="none"
+						height="24"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						viewbox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 					</svg>
-					<span class="animfolio-social__label">Github</span>
+
+					<span class="animfolio-social__label">
+						Github
+					</span>
+
 				</a>
-				<a aria-label="Linkedin" href="https://www.linkedin.com/in/markel-quevedo" rel="noopener noreferrer" target="_blank">
-					<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+
+				<a
+					aria-label="Linkedin"
+					href="https://www.linkedin.com/in/markel-quevedo"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+
+					<svg
+						aria-hidden="true"
+						fill="none"
+						height="24"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						viewbox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
 						<rect height="12" width="4" x="2" y="9"></rect>
 						<circle cx="4" cy="4" r="2"></circle>
 					</svg>
-					<span class="animfolio-social__label">Linkedin</span>
+
+					<span class="animfolio-social__label">
+						Linkedin
+					</span>
+
 				</a>
-				<a aria-label="Email" href="mailto:quevedo.markel@gmail.com" rel="noopener noreferrer" target="_blank">
-					<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+
+
+				<a
+					aria-label="Email"
+					href="mailto:quevedo.markel@gmail.com"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+
+					<svg
+						aria-hidden="true"
+						fill="none"
+						height="24"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						viewbox="0 0 24 24"
+						width="24"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
 						<polyline points="22,6 12,13 2,6"></polyline>
 					</svg>
-					<span class="animfolio-social__label">Email</span>
+
+					<span class="animfolio-social__label">
+						Email
+					</span>
+
 				</a>
+
 			</div>
-			<footer class="markel-copyright">© Markel Quevedo</footer>
+
+
+			<!-- FOOTER -->
+
+			<footer class="markel-copyright">
+				© Markel Quevedo
+			</footer>
+
 		</div>
+
+
+		<!-- =====================================================
+		     JAVASCRIPT SETTINGS
+		     ===================================================== -->
+
 		<script>
-			var animfolioSettings = {"animationIntensity":"medium","respectReducedMotion":"1","colorScheme":"dark","smoothScroll":"1","scrollBehavior":"smooth","customCursor":"","backToTop":"1","progressBar":"1","darkModeToggle":"1","debugMode":""};
-			//# sourceURL=animfolio-engine-js-extra
+
+			var animfolioSettings = {
+			"animationIntensity": "medium",
+			"respectReducedMotion": "1",
+			"colorScheme": "dark",
+			"smoothScroll": "1",
+			"scrollBehavior": "smooth",
+			"customCursor": "",
+			"backToTop": "1",
+			"progressBar": "1",
+			"darkModeToggle": "1",
+			"debugMode": ""
+			};
+
 		</script>
+
+
 		<script src="./assets/js/wp-shim.js"></script>
 		<script src="./assets/js/animfolio-engine.js"></script>
 		<script src="./assets/js/modules/scroll-trigger.js"></script>
